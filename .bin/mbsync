@@ -1,5 +1,0 @@
-#!/bin/sh
-
-`whereis $0 | cut -d\  -f2` \
-	--config="$XDG_CONFIG_HOME"/mbsync/mbsyncrc \
-	"$@"

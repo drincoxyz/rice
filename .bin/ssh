@@ -1,6 +1,0 @@
-#!/bin/sh
-
-`whereis $0 | cut -d\  -f2` \
-	-F "$XDG_CONFIG_HOME"/ssh/config \
-	-i "$XDG_DATA_HOME"/ssh/id_rsa \
-	"$@"

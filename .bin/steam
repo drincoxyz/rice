@@ -1,5 +1,0 @@
-#!/bin/sh
-
-HOME="$XDG_DATA_HOME"/Steam \
-XDG_DATA_HOME="$XDG_DATA_HOME"/Steam/`basename "$XDG_DATA_HOME"` \
-`whereis $0 | cut -d\  -f2` "$@"
