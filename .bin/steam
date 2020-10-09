@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export HOME="$STEAMHOME"
-export XDG_DATA_HOME="$STEAMDATA"
-mkdir -pv "$XDG_DATA_HOME" && \
+HOME="$XDG_DATA_HOME"/Steam \
+XDG_DATA_HOME="$XDG_DATA_HOME"/Steam/`basename "$XDG_DATA_HOME"` \
 `whereis $0 | cut -d\  -f2` "$@"

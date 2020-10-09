@@ -1,4 +1,5 @@
 #!/bin/sh
 
-mkdir -pv `dirname "$NVIDIARC"` && \
-`whereis $0 | cut -d\  -f2` --config="$NVIDIARC" "$@"
+`whereis $0 | cut -d\  -f2` \
+	--config="$XDG_CONFIG_HOME"/nvidia/nvidia-settings-rc \
+	"$@"

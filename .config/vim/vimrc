@@ -8,3 +8,5 @@ se t_Co=16
 se ts=4 sw=4 sts=0
 
 se vi+=n$XDG_CACHE_HOME/vim/viminfo
+
+au bufread *xinitrc se ft=sh

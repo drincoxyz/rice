@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir -pv `dirname "$SSHCONFIG"` && \
-mkdir -pv `dirname "$SSHIDENTITY"` && \
-mkdir -pv `dirname "$SSHKNOWNHOSTS"` && \
-`whereis $0 | cut -d\  -f2` -F "$SSHCONFIG" -i "$SSHIDENTITY" "$@"
+`whereis $0 | cut -d\  -f2` \
+	-F "$XDG_CONFIG_HOME"/ssh/config \
+	-i "$XDG_DATA_HOME"/ssh/id_rsa \
+	"$@"

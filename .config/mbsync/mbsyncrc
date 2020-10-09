@@ -1,0 +1,21 @@
+IMAPAccount     posteo
+Host            posteo.de
+User            drinco@posteo.net
+PassCmd         "gpg -qd \"$XDG_DATA_HOME\"/mbsync/posteo/pass.gpg"
+SSLType         IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore posteo-remote
+Account   posteo
+
+MaildirStore posteo-local
+Subfolders   Verbatim
+Path         ~/.data/mbsync/posteo/
+Inbox        ~/.data/mbsync/posteo/Inbox
+
+Channel   posteo
+Master    :posteo-remote:
+Slave     :posteo-local:
+Patterns  * !Trash
+Create    Both
+SyncState *
