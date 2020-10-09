@@ -1,0 +1,9 @@
+lspci | grep NVIDIA >/dev/null && nvidia-settings -l
+
+xset r rate 300 50
+xrdb -load "$XRESOURCES"
+
+sxhkd &
+dwmblocks &
+
+exec dwm

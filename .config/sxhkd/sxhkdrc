@@ -1,0 +1,10 @@
+super+{Return,d,w}
+	${TERMINAL,LAUNCHER,BROWSER}
+
+super+e
+	cpemoji
+
+XF86Audio{Raise,Lower}Volume
+	vol 5%{+,-}
+XF86AudioMute
+	vol toggle

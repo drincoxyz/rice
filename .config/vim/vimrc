@@ -1,0 +1,10 @@
+syn on
+
+se nu rnu
+se lbr bri
+se ai si sta
+
+se t_Co=16
+se ts=4 sw=4 sts=0
+
+se vi+=n$XDG_CACHE_HOME/vim/viminfo

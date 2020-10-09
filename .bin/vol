@@ -1,0 +1,10 @@
+#!/bin/sh
+
+AMIXER_FLAGS=-M
+
+case $1 in
+	*%*|toggle|on|off) amixer "$AMIXER_FLAGS" set Master "$1" ;;
+
+	"") >&2 echo 'No command given'     && exit 1 ;;
+	*)  >&2 echo "Unknown command '$1'" && exit 1
+esac

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export HOME="$STEAMHOME"
+export XDG_DATA_HOME="$STEAMDATA"
+mkdir -pv "$XDG_DATA_HOME" && \
+`whereis $0 | cut -d\  -f2` "$@"
