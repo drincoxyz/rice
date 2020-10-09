@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/"`basename $0`" \
+--config="$XDG_CONFIG_HOME"/nvidia/nvidia-settings-rc \
+"$@"

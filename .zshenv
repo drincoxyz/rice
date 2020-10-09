@@ -17,32 +17,3 @@ export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/lesshst
-
-# moves default mbsyncrc
-mbsync(){
-	/usr/bin/"$0" \
-	--config="$XDG_CONFIG_HOME"/mbsync/mbsyncrc \
-	"$@"
-}
-
-# moves default nvidia-settings-rc
-nvidia-settings(){
-	/usr/bin/"$0" \
-	--config="$XDG_CONFIG_HOME"/nvidia/nvidia-settings-rc \
-	"$@"
-}
-
-# moves some default ssh files
-ssh(){
-	/usr/bin/"$0" \
-	-F "$XDG_CONFIG_HOME"/ssh/config \
-	-i "$XDG_DATA_HOME"/ssh/id_rsa \
-	"$@"
-}
-
-# moves all steam files to it sown home dir
-steam(){
-	HOME="$XDG_DATA_HOME"/Steam \
-	XDG_DATA_HOME="$XDG_DATA_HOME"/Steam/"`basename "$XDG_DATA_HOME"`" \
-	/usr/bin/"$0" "$@"
-}

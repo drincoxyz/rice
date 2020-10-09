@@ -1,16 +1,14 @@
-. "$HOME"/.zshenv
-
 export LESS_TERMCAP_md=$'\e[01;33m'
 export LESS_TERMCAP_us=$'\e[01;32m'
 
 alias ls='ls -A --color=auto'
 alias grep='grep --color=auto'
 
-# (re)-deploys rice
+# updates rice
 mkrice(){
 	# fair warning
 	echo -e "\033[33;5m! ! ! WARNING ! ! !\033[0m"
-	echo "This will deploy everything from the rice to the home directory of the '$USER' user. By continuing, any conflicting files will be overwritten by this process."
+	echo "This will update everything from the rice to the home directory of the '$USER' user. By continuing, any conflicting files will be overwritten by this process."
 	echo -n 'Continue? (y/N): ' && \
 	read CONT
 	case "$CONT" in
@@ -29,8 +27,9 @@ mkrice(){
 	mkdir -pv "$GNUPGHOME" && \
 	chmod -v 700 "$GNUPGHOME"
 
-	# setup OpenSSH data dir
+	# setup OpenSSH dirs
 	mkdir -pv "$XDG_DATA_HOME"/ssh && \
+	mkdir -pv "$XDG_CACHE_HOME"/ssh && \
 	chmod -v 700 "$XDG_DATA_HOME"/ssh
 
 	# setup isync data dir
@@ -41,8 +40,9 @@ mkrice(){
 	ln -sfv "$HOME"/git/rice/.bin "$HOME" && \
 	chmod -v 755 "$HOME"/.bin/*
 
-	# link config files
+	# link config/data files
 	ln -sfv "$HOME"/git/rice/"`basename "$XDG_CONFIG_HOME"`"/* "$XDG_CONFIG_HOME"
+	ln -sfv "$HOME"/git/rice/"`basename "$XDG_DATA_HOME"`"/* "$XDG_DATA_HOME"
 
 	# link zshenv
 	ln -sfv "$HOME"/git/rice/.zshenv "$HOME"
