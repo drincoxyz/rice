@@ -1,6 +1,6 @@
 #!/bin/sh
 
 /usr/bin/"`basename $0`" \
--F "$XDG_CONFIG_HOME"/ssh/config \
--i "$XDG_DATA_HOME"/ssh/id_rsa \
+-F"$XDG_CONFIG_HOME"/ssh/config \
+-i"$XDG_DATA_HOME"/ssh/id_rsa \
 "$@"

@@ -2,9 +2,19 @@
 
 AMIXER_FLAGS=-M
 
-case $1 in
-	*%*|toggle|on|off) amixer "$AMIXER_FLAGS" set Master "$1" ;;
+case "$1" in
+	*%*|toggle|on|off) amixer "$AMIXER_FLAGS" set Master "$1" && pkill -RTMIN+10 dwmblocks ;;
+	get)	
+		OUT=`amixer "$AMIXER_FLAGS" get Master | awk 'NR > 1 {print $1}' RS=[ FS=] | tac -r`
 
+		for INFO in $OUT; do
+			case "$INFO" in
+				*%)  echo -n "$INFO" ;;
+				on)  echo -n 🔊\  ;;
+				off) echo -n 🔇\  ;; 
+			esac
+		done
+	;;
 	"") >&2 echo 'No command given'     && exit 1 ;;
-	*)  >&2 echo "Unknown command '$1'" && exit 1
+	*) >&2 echo "Unknown command '$1'" && exit 1
 esac
