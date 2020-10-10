@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/"`basename $0`" \
+-I"$XDG_DATA_HOME"/xrdb \
+"$@"
