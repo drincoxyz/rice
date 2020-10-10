@@ -2,4 +2,4 @@
 
 SEL=`cat "$XDG_DATA_HOME"/emoji/emoji | dmenu -p emoji`
 [ -z "$SEL" ] && exit 1
-printf "$SEL" | cut -d\  -f1 | xclip -sel clip
+printf $SEL | cut -d\  -f1 | xargs echo -n | xclip -sel clip

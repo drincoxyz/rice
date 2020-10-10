@@ -17,3 +17,4 @@ export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/lesshst
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_DATA_HOME"/java

@@ -1,1 +1,28 @@
 #include "iterm2.xresources"
+
+*.foreground:  _foreground
+*.background:  _background
+*.cursorColor: _cursorColor
+*.color0:      _color0
+*.color8:      _color8
+*.color1:      _color1
+*.color9:      _color9
+*.color2:      _color2
+*.color10:     _color10
+*.color3:      _color3
+*.color11:     _color11
+*.color4:      _color4
+*.color12:     _color12
+*.color5:      _color5
+*.color13:     _color13
+*.color6:      _color6
+*.color14:     _color14
+*.color7:      _color7
+*.color15:     _color15
+
+!dwm.selfgcolor:      _color9
+!dwm.selbgcolor:      _background
+!dwm.selbordercolor:  _color9
+!dwm.normfgcolor:     _foreground
+!dwm.normbgcolor:     _background
+!dwm.normbordercolor: _color8
