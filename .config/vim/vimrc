@@ -9,6 +9,8 @@ se ts=4 sw=4 sts=0
 
 se vi+=n$XDG_CACHE_HOME/vim/viminfo
 
+no ; :
+
 au bufread *xinitrc se ft=sh
 
 hi Visual cterm=bold ctermbg=none ctermfg=none

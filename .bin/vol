@@ -1,20 +1,23 @@
 #!/bin/sh
 
-AMIXER_FLAGS=-M
+case $1 in
+	# set volume
+	toggle) pamixer -t   && pkill -RTMIN+10 dwmblocks ;;
+	on)     pamixer -u   && pkill -RTMIN+10 dwmblocks ;;
+	off)    pamixer -m   && pkill -RTMIN+10 dwmblocks ;;
+	up)     pamixer -i 5 && pkill -RTMIN+10 dwmblocks ;;
+	down)   pamixer -d 5 && pkill -RTMIN+10 dwmblocks ;;
 
-case "$1" in
-	*%*|toggle|on|off) amixer "$AMIXER_FLAGS" set Master "$1" && pkill -RTMIN+10 dwmblocks ;;
-	get)	
-		OUT=`amixer "$AMIXER_FLAGS" get Master | awk 'NR > 1 {print $1}' RS=[ FS=] | tac -r`
-
-		for INFO in $OUT; do
-			case "$INFO" in
-				*%)  echo -n "$INFO" ;;
-				on)  echo -n 🔊\  ;;
-				off) echo -n 🔇\  ;; 
-			esac
-		done
+	# get volume
+	get)
+		OUT=`pamixer --get-volume-human`
+		case $OUT in
+			muted) echo -n 🔇\ `pamixer --get-volume`% ;;
+			*)     echo -n 🔊 "$OUT"
+		esac
 	;;
+
+	# errors
 	"") >&2 echo 'No command given'     && exit 1 ;;
-	*) >&2 echo "Unknown command '$1'" && exit 1
+	*)  >&2 echo "Unknown command '$1'" && exit 1
 esac

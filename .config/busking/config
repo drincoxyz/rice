@@ -1,0 +1,7 @@
+@^(https?://|www\.) = $BROWSER
+image/              = feh
+video/              = mpv
+audio/              = mpv::st
+text/               = $EDITOR?:st
+application/pdf     = zathura
+inode/directory     = ranger?:st
