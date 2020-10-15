@@ -1,5 +1,7 @@
+! selected theme
 #include "iterm2.xresources"
 
+! apply theme
 *.foreground:  _foreground
 *.background:  _background
 *.cursorColor: _cursorColor

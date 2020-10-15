@@ -1,10 +1,14 @@
+# load nvidia config
 lspci | grep NVIDIA >/dev/null && nvidia-settings -l
 
+# configure X
 xset r rate 300 50
 xrdb -load "$XRESOURCES"
 feh --no-fehbg --bg-fill -zr "$HOME"/pictures/wallpaper
 
+# start daemons
 sxhkd &
 dwmblocks &
 
+# start wm
 exec dwm

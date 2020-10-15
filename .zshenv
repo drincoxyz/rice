@@ -13,6 +13,9 @@ export XINITRC="$XDG_CONFIG_HOME"/xinit/xinitrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XRESOURCES="$XDG_CONFIG_HOME"/xrdb/Xresources
 
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+export STEAM_COMPAT_DATA_PATH="$XDG_DATA_HOME"/proton
+
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'

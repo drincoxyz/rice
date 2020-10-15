@@ -1,4 +1,5 @@
 @^(https?://|www\.) = $BROWSER
+.exe                = proton
 image/              = feh
 video/              = mpv
 audio/              = mpv::st

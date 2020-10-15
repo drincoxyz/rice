@@ -1,10 +1,14 @@
+# launch program
 super+{Return,d,w}
 	${TERMINAL,LAUNCHER,BROWSER}
 
+# launch script
 super+e
 	cpemoji
 
+# change volume
 XF86Audio{Raise,Lower}Volume
 	vol {up,down}
+# toggle volume
 XF86AudioMute
 	vol toggle

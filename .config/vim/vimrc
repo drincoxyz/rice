@@ -1,16 +1,23 @@
+" syntax highlighting
 syn on
 
+" line numbers
 se nu rnu
+" line breaks
 se lbr bri
+" indenting
 se ai si sta
-
-se t_Co=16
 se ts=4 sw=4 sts=0
-
+" terminal colors
+se t_Co=16
+" viminfo
 se vi+=n$XDG_CACHE_HOME/vim/viminfo
 
+" easy cmd prompt
 no ; :
 
+" unknown file types
 au bufread *xinitrc se ft=sh
 
+" bold visual selection
 hi Visual cterm=bold ctermbg=none ctermfg=none
