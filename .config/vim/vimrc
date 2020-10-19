@@ -3,15 +3,25 @@ syn on
 
 " line numbers
 se nu rnu
+
 " line breaks
 se lbr bri
+
 " indenting
 se ai si sta
 se ts=4 sw=4 sts=0
+
 " terminal colors
 se t_Co=16
+
 " viminfo
 se vi+=n$XDG_CACHE_HOME/vim/viminfo
+
+" package path
+se pp^=$XDG_DATA_HOME/vim
+
+" runtime path
+se rtp^=$XDG_DATA_HOME/vim
 
 " easy cmd prompt
 no ; :
