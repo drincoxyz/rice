@@ -14,7 +14,7 @@ The only other font used in this rice is [JoyPixels](https://www.joypixels.com/)
 
 ## xdg-utils
 
-This rice has a [config file] for [busking](https://github.com/supplantr/busking), a simple regex-based file opener as a drop-in replacement for `xdg-open`. Because of this busking is incompatible with the [xdg-utils](use://www.archlinux.org/packages/extra/x86_64/xdg-utils/) package in most cases.
+This rice has a [config file](.config/busking/config) for [busking](https://github.com/supplantr/busking), a simple regex-based file opener as a drop-in replacement for `xdg-open`. Because of this busking is incompatible with the [xdg-utils](use://www.archlinux.org/packages/extra/x86_64/xdg-utils/) package in most cases.
 
 ## XDG Base Directory
 
