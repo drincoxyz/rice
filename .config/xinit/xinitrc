@@ -1,7 +1,7 @@
-# load nvidia config
+# load nvidia config if applicable
 lspci | grep NVIDIA >/dev/null && nvidia-settings -l
 
-# configure X
+# configure X11
 xset r rate 300 50
 xrdb -load "$XRESOURCES"
 feh --no-fehbg --bg-fill -zr "$HOME"/pictures/wallpaper

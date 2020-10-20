@@ -22,6 +22,7 @@
 *.color7:      _color7
 *.color15:     _color15
 
+! dwm colors
 !dwm.selfgcolor:      _color9
 !dwm.selbgcolor:      _background
 !dwm.selbordercolor:  _color9

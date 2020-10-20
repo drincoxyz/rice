@@ -9,6 +9,5 @@ super+e
 # change volume
 XF86Audio{Raise,Lower}Volume
 	vol {up,down}
-# toggle volume
-XF86AudioMute
+XF86{AudioMute,Launch1}
 	vol toggle

@@ -2,7 +2,7 @@
 export LESS_TERMCAP_md=$'\e[01;33m'
 export LESS_TERMCAP_us=$'\e[01;32m'
 
-# colored cmd output
+# colored output
 alias ls='ls -A --color=auto'
 alias grep='grep --color=auto'
 

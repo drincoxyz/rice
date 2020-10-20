@@ -1,8 +1,39 @@
 #!/bin/sh
 
+# block name
 case $1 in
-	mem)  free -h | awk '/^Mem/ { print $3"/"$2 }' | sed s/i//g ;;
-	date) date +'%a %b %-d, %-I:%M %p' ;;
-	wttr) curl wttr.in\?format="+%c+%t\n" | awk '{$1=$1};1' || echo '❔ ...' ;;
-	vol) vol get ;;
+	# memory
+	mem) 
+		# print free memory
+		free -h | awk '/^Mem/ { print $3"/"$2 }' | sed s/i//g
+	;;
+
+	# date
+	date)
+		# print date and time
+		date +'%a %b %-d, %-I:%M %p'
+	;;
+
+	# weather
+	wttr)
+		# download and print weather
+		curl wttr.in\?format="+%c+%t\n" | awk '{$1=$1};1' || echo '❔ ...'
+	;;
+
+	# volume
+	vol)
+		# print volume status
+		vol get
+	;;
+
+	# battery
+	bat)
+		# capacity file
+		CAPFI=/sys/class/power_supply/BAT0/capacity
+
+		# print battery percentage
+		[ -e $CAPFI ] && \
+		echo 🔋\ `cat $CAPFI`% || \
+		echo 🔋\ N/A
+	;;
 esac
