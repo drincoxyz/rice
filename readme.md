@@ -40,4 +40,4 @@ Similar to the the base directories, there's also [user directories](https://www
 
 See [user-dirs.dirs](.config/user-dirs.dirs) to see what these directories are. They're basically the defaults, but all lowercase.
 
-Also, you might need [this package](use://www.archlinux.org/packages/extra/x86_64/xdg-user-dirs/) from your distro for these directories to actually be used by most programs. It also provides a shell utility to get these directories.
+Also, you might need [this package](https://www.archlinux.org/packages/extra/x86_64/xdg-user-dirs/) from your distro for these directories to actually be used by most programs. It also provides a shell utility to get these directories.
