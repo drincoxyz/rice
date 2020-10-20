@@ -2,6 +2,15 @@
 
 These are the configuration files that make up my personal GNU/Linux experience.
 
+## .zshenv / .zprofile
+
+In this rice, `$ZDOTDIR/.zprofile` is present instead of `$HOME/.zshenv`. As explained to great detail in the [XDG Base Directory](#xdg-base-directory) section, this was done in the attempt to minimize the amount of dot files and folders in the home directory as possible.
+
+This presents an initial problem, however. `$ZDOTDIR` must be set by `$HOME/.zshenv`, yet it  isn't set in this rice due to the lack of `$HOME/.zshenv`. Thus, one of two things must be done:
+
+1. Manually create `$HOME/.zshenv` with the line: `$ZDOTDIR="$HOME"/.config/zsh` (non-root solution, but defeats the whole point of using `$ZDOTDIR/.zprofile` instead)
+2. Edit `/etc/profile` (or similar, eg. decentralized config `/etc/profile.d/*`) to the same effect as above (root solution, recommended if the privilege is available)
+
 ## User Binaries
 
 Local user binaries are found in `$HOME/.bin`, and take precedence over other `$PATH` binaries before logging in. These are mostly for scripts and wrappers for existing programs.
@@ -18,7 +27,7 @@ This rice has a [config file](.config/busking/config) for [busking](https://gith
 
 ## XDG Base Directory
 
-[This specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) is used to tell programs where they should store their files. It's designed in such a way that your home folder should, in theory, only have 3 dot directories in it (besides `.bin`, which is specific to this rice), and 0 dot files. However, the unfortunate reality is that, by default, you'll eventually get this instead:
+[This specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) is used to tell programs where they should store their files. It's designed in such a way that your home folder should, in theory, only have 3 dot directories in it (with the exception of `$HOME/.bin`, which is specific to this rice), and 0 dot files. However, the unfortunate reality is that, by default, you'll eventually get this instead:
 
 <img src=readme/dotfilehell.webp>
 
@@ -36,7 +45,7 @@ There's also `$XDG_RUNTIME_DIR`, which is similar to `$XDG_CACHE_HOME` but used 
 
 ## XDG User Directory
 
-Similar to the the base directories, there's also [user directories](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/), which are your everyday directories for stuff like downloads, pictures, videos etc.
+Similar to the the [base directories](#xdg-base-directory), there's also [user directories](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/), which are your everyday directories for stuff like downloads, pictures, videos etc.
 
 See [user-dirs.dirs](.config/user-dirs.dirs) to see what these directories are. They're basically the defaults, but all lowercase.
 

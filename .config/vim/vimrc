@@ -14,6 +14,9 @@ se ts=4 sw=4 sts=0
 " terminal colors
 se t_Co=16
 
+" show as much of the last line as possible
+se display+=lastline
+
 " viminfo
 se vi+=n$XDG_CACHE_HOME/vim/viminfo
 
@@ -23,8 +26,17 @@ se pp^=$XDG_DATA_HOME/vim
 " runtime path
 se rtp^=$XDG_DATA_HOME/vim
 
+" paste toggle key
+se pt=<C-P>
+
+" searching
+se is hls
+
 " easy cmd prompt
 no ; :
+
+" clear search highlighting
+no <Space> :noh<Return>
 
 " unknown file types
 au bufread *xinitrc se ft=sh

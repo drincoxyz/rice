@@ -2,6 +2,10 @@
 super+{Return,d,w}
 	${TERMINAL,LAUNCHER,BROWSER}
 
+# launch terminal program
+super+{y}
+	$TERMINAL -e {straw-viewer}
+
 # launch script
 super+e
 	cpemoji
