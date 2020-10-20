@@ -2,14 +2,16 @@
 
 These are the configuration files that make up my personal GNU/Linux experience.
 
-## .zshenv / .zprofile
+## zshenv
 
-In this rice, `$ZDOTDIR/.zprofile` is present instead of `$HOME/.zshenv`. As explained to great detail in the [XDG Base Directory](#xdg-base-directory) section, this was done in the attempt to minimize the amount of dot files and folders in the home directory as possible.
+In this rice, `zshenv` is located in `$ZDOTDIR/.zshenv` instead of `$HOME/.zshenv`. As explained to great detail in [this section](#xdg-base-directory), this was done in the attempt to minimize the amount of dot files and folders in the home directory as possible.
 
-This presents an initial problem, however. `$ZDOTDIR` must be set by `$HOME/.zshenv`, yet it  isn't set in this rice due to the lack of `$HOME/.zshenv`. Thus, one of two things must be done:
+This presents an initial problem, however. `$ZDOTDIR` must be set in `zshenv`, since it's the first script ran by the shell. But since zsh uses `$ZDOTDIR="$HOME"` by default, the `zshenv` used in this rice wont be sourced, and neither will the rest of the zsh dot files.
 
-1. Manually create `$HOME/.zshenv` with the line: `$ZDOTDIR="$HOME"/.config/zsh` (non-root solution, but defeats the whole point of using `$ZDOTDIR/.zprofile` instead)
-2. Edit `/etc/profile` (or similar, eg. decentralized config `/etc/profile.d/*`) to the same effect as above (root solution, recommended if the privilege is available)
+There are two solutions to this:
+
+1. Move `$ZDOTDIR/.zshenv` in this rice to `$HOME/.zshenv` (non-root solution, but adds an additional dot file to the home directory)
+2. Edit `/etc/zsh/zshenv` (or whatever it is on your system) to set `$ZDOTDIR="$HOME"/.config/zsh` (root solution, recommended if the privilege is available)
 
 ## User Binaries
 
