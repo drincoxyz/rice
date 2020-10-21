@@ -20,6 +20,9 @@ se display+=lastline
 " viminfo
 se vi+=n$XDG_CACHE_HOME/vim/viminfo
 
+" disable netrwhist
+let g:netrw_dirhistmax = 0
+
 " package path
 se pp^=$XDG_DATA_HOME/vim
 
