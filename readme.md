@@ -49,7 +49,7 @@ There's also `$XDG_RUNTIME_DIR`, which is similar to `$XDG_CACHE_HOME` but used 
 
 There are some programs that are basically impossible to have them respect the specification (beyond my capabilities as a user, anyway). Here's a list that I have to deal with when using my rice:
 
-+ [Brave]() - Not specifically an issue with Brave, but since most chromium-based browsers use [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) for handling SSL certificates. There will always be a `$HOME/.pki` directory when using these browsers, which is used by NSS.
++ [Brave](https://brave.com/) - Not specifically a Brave issue, but since most chromium-based browsers use [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) for handling SSL certificates. There will always be a `$HOME/.pki` directory when using these browsers, which is used by NSS.
 
 ## XDG User Directory
 
