@@ -45,6 +45,12 @@ The directories used in this specification are configured as such:
 
 There's also `$XDG_RUNTIME_DIR`, which is similar to `$XDG_CACHE_HOME` but used more for stuff like named pipes and sockets. Also, `$XDG_RUNTIME_DIR` is often set automatically by the system, but if it isn't, make sure it's set somehow, because this rice doesn't set it.
 
+### Incompatibilities
+
+There are some programs that are basically impossible to have them respect the specification (beyond my capabilities as a user, anyway). Here's a list that I have to deal with when using my rice:
+
++ [Brave]() - Not specifically an issue with Brave, but since most chromium-based browsers use [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) for handling SSL certificates. There will always be a `$HOME/.pki` directory when using these browsers, which is used by NSS.
+
 ## XDG User Directory
 
 Similar to the the [base directories](#xdg-base-directory), there's also [user directories](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/), which are your everyday directories for stuff like downloads, pictures, videos etc.
