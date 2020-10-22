@@ -1,4 +1,5 @@
 @^(https?://|www\.) = $BROWSER
+@^(magnet?:)        = transmission-gtk
 .exe                = proton
 image/              = feh
 video/              = mpv

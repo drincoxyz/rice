@@ -15,3 +15,9 @@ XF86Audio{Raise,Lower}Volume
 	vol {up,down}
 XF86{AudioMute,Launch1}
 	vol toggle
+
+# change volume (alt)
+super+{Up,Down}
+	vol {up,down}
+super+shift+Down
+	vol toggle
