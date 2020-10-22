@@ -6,6 +6,12 @@ export LESS_TERMCAP_us=$'\e[01;32m'
 alias ls='ls -A --color=auto'
 alias grep='grep --color=auto'
 
+# syntax highlighting
+. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# completions
+autoload -U compinit && compinit -d "$XDG_DATA_HOME"/zsh/zcompdump
+
 # updates rice
 mkrice(){
 	# fair warning
