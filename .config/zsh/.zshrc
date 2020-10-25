@@ -12,6 +12,9 @@ alias grep='grep --color=auto'
 # completions
 autoload -U compinit && compinit -d "$XDG_DATA_HOME"/zsh/zcompdump
 
+# primary prompt
+PS1="%{%B%F{red}%}[%{%F{yellow}%}%n%{%F{green}%}@%{%F{blue}%}%m %{%F{magenta}%}%~%{%F{red}%}]%{%F{cyan}%}%#%{%f%b%} "
+
 # updates rice
 mkrice(){
 	# fair warning
