@@ -8,4 +8,4 @@ ARGS=--config="$XDG_CONFIG_HOME"/mbsync/mbsyncrc
 ARGS="$ARGS $@"
 
 # run mbsync
-/usr/bin/mbsync "$ARGS"
+/usr/bin/mbsync $ARGS

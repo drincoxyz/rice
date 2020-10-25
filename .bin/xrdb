@@ -7,4 +7,4 @@ ARGS=-I"$XDG_DATA_HOME"/xrdb
 ARGS="$ARGS $@"
 
 # run xrdb
-/usr/bin/xrdb "$ARGS"
+/usr/bin/xrdb $ARGS

@@ -8,4 +8,4 @@ ARGS=--config="$XDG_CONFIG_HOME"/nvidia/nvidia-settings-rc
 ARGS="$ARGS $@"
 
 # run nvidia-settings
-/usr/bin/nvidia-settings "$ARGS"
+/usr/bin/nvidia-settings $ARGS

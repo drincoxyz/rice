@@ -8,4 +8,4 @@ export HOME="$XDG_DATA_HOME"/Steam
 export XDG_DATA_HOME="$XDG_DATA_HOME"/Steam/`basename "$XDG_DATA_HOME"`
 
 # launch steam
-/usr/bin/steam "$@"
+/usr/bin/steam $@

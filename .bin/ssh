@@ -11,4 +11,4 @@ ARGS="$ARGS "-i"$XDG_DATA_HOME"/ssh/id_rsa
 ARGS="$ARGS $@"
 
 # run ssh
-/usr/bin/"`basename $0`" "$ARGS"
+/usr/bin/ssh $ARGS
