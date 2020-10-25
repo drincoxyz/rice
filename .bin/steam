@@ -1,5 +1,11 @@
 #!/bin/sh
+# steam wrapper
 
-HOME="$XDG_DATA_HOME"/Steam \
-XDG_DATA_HOME="$XDG_DATA_HOME"/Steam/"`basename "$XDG_DATA_HOME"`" \
-/usr/bin/"`basename "$0"`" "$@"
+# update home directory
+export HOME="$XDG_DATA_HOME"/Steam
+
+# update data directory
+export XDG_DATA_HOME="$XDG_DATA_HOME"/Steam/`basename "$XDG_DATA_HOME"`
+
+# launch steam
+/usr/bin/steam "$@"

@@ -1,23 +1,40 @@
 #!/bin/sh
+# volume interface
 
+# command
 case $1 in
-	# set volume
-	toggle) pamixer -t   && pkill -RTMIN+10 dwmblocks ;;
-	on)     pamixer -u   && pkill -RTMIN+10 dwmblocks ;;
-	off)    pamixer -m   && pkill -RTMIN+10 dwmblocks ;;
-	up)     pamixer -i 5 && pkill -RTMIN+10 dwmblocks ;;
-	down)   pamixer -d 5 && pkill -RTMIN+10 dwmblocks ;;
+	# toggle volume
+	toggle) pamixer -t && pkill -RTMIN+10 dwmblocks ;;
+
+	# enable volume
+	on) pamixer -u && pkill -RTMIN+10 dwmblocks ;;
+
+	# disable volume
+	off) pamixer -m && pkill -RTMIN+10 dwmblocks ;;
+
+	# raise volume
+	up) pamixer -i 5 && pkill -RTMIN+10 dwmblocks ;;
+
+	# lower volume
+	down) pamixer -d 5 && pkill -RTMIN+10 dwmblocks ;;
 
 	# get volume
 	get)
+		# volume percentage
 		OUT=`pamixer --get-volume-human`
+
 		case $OUT in
+			# volume muted
 			muted) echo -n 🔇\ `pamixer --get-volume`% ;;
-			*)     echo -n 🔊 "$OUT"
+
+			# volume unmuted
+			*) echo -n 🔊 "$OUT"
 		esac
 	;;
 
-	# errors
-	"") >&2 echo 'No command given'     && exit 1 ;;
-	*)  >&2 echo "Unknown command '$1'" && exit 1
+	# no command given
+	"") >&2 echo 'No command given' && exit 1 ;;
+
+	# unknown command
+	*) >&2 echo "Unknown command '$1'" && exit 1
 esac

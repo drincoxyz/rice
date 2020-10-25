@@ -1,5 +1,10 @@
 #!/bin/sh
 
-/usr/bin/"`basename $0`" \
--I"$XDG_DATA_HOME"/xrdb \
-"$@"
+# data directory
+ARGS=-I"$XDG_DATA_HOME"/xrdb
+
+# pass arguments
+ARGS="$ARGS $@"
+
+# run xrdb
+/usr/bin/xrdb "$ARGS"

@@ -1,5 +1,11 @@
 #!/bin/sh
+# nvidia-settings wrapper
 
-/usr/bin/"`basename $0`" \
---config="$XDG_CONFIG_HOME"/nvidia/nvidia-settings-rc \
-"$@"
+# config file
+ARGS=--config="$XDG_CONFIG_HOME"/nvidia/nvidia-settings-rc
+
+# pass arguments
+ARGS="$ARGS $@"
+
+# run nvidia-settings
+/usr/bin/nvidia-settings "$ARGS"

@@ -1,4 +1,5 @@
 #!/bin/sh
+# dwmblocks block handler
 
 # block name
 case $1 in

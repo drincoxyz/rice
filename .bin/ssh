@@ -1,6 +1,14 @@
 #!/bin/sh
+# ssh wrapper
 
-/usr/bin/"`basename $0`" \
--F"$XDG_CONFIG_HOME"/ssh/config \
--i"$XDG_DATA_HOME"/ssh/id_rsa \
-"$@"
+# config file
+ARGS=-F"$XDG_CONFIG_HOME"/ssh/config
+
+# identity file
+ARGS="$ARGS "-i"$XDG_DATA_HOME"/ssh/id_rsa
+
+# pass arguments
+ARGS="$ARGS $@"
+
+# run ssh
+/usr/bin/"`basename $0`" "$ARGS"

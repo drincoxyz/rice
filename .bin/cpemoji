@@ -1,5 +1,11 @@
 #!/bin/sh
+# interactive emoji copier
 
+# prompt the user to select an emoji
 SEL=`cat "$XDG_DATA_HOME"/emoji/emoji | dmenu -p emoji`
+
+# abort when no emoji was selected
 [ -z "$SEL" ] && exit 1
+
+# copy selected emoji to clipboard
 printf $SEL | cut -d\  -f1 | xargs echo -n | xclip -sel clip

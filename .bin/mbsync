@@ -1,5 +1,11 @@
 #!/bin/sh
+# mbsync wrapper
 
-/usr/bin/"`basename $0`" \
---config="$XDG_CONFIG_HOME"/mbsync/mbsyncrc \
-"$@"
+# config file
+ARGS=--config="$XDG_CONFIG_HOME"/mbsync/mbsyncrc
+
+# pass arguments
+ARGS="$ARGS $@"
+
+# run mbsync
+/usr/bin/mbsync "$ARGS"
